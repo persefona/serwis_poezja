@@ -6,8 +6,19 @@
 
 
 	<p>
-	<%= @post.category.title unless @post.category.nil? %>
+		<%= @post.category.title unless @post.category.nil? %>
 	</p>
+
+
+	<% if @post.category.title == "erotyk" %>
+			<div class="erotyk">
+	<% elsif @post.category.title == "aforyzm" %> 
+	     	<div class="aforyzm">
+	<% else %>
+	  	 	<div class="limeryk">
+	<% end %>
+
+
 
 	<p class_"date">
 		Dodano <%= @post.created_at.strftime(" %d.%m.%Y ") %> 
@@ -27,5 +38,10 @@
 		<h3>Dodaj komentarz:</h3>
 		<%= render "comments/form" %>
 
-	</div>
+    </div>
+
+		   </div>
+		  </div>
+		 </div>
+
 </div>

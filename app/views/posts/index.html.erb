@@ -55,8 +55,6 @@
 
 
 
-
-
 <% @posts.each do |post| %>
 	
 		
@@ -69,7 +67,10 @@
       <div class="row">
         <div class="col-lg-12 postf" >
 
-         
+
+   
+
+                 
          <h2 class="titlepost"><%= link_to post.title, post, {:style=>"color:#FF6622;"} %></h2>
          <p class="datepost"><%= post.created_at.strftime("%B, %d, %Y") %></p>
          <p class="bodypost"><%= post.body %></p>
