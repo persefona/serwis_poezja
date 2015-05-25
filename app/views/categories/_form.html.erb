@@ -1,0 +1,22 @@
+<%= form_for @category do |f| %>
+		<% if @category.errors.any? %>
+			<div id="errors"> <!-- zabezpieczenie na wypadek zapisywania pustego posta -->
+				<h2><%= pluralize(@category.errors.count, "error") %> </h2>
+
+				<ul>
+					<% @category.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+	<% end %>
+		<p>
+			<%= f.label :Nazwa %><br>
+			<%= f.text_field :title %>
+		</p>
+
+		<p>
+			<%= f.submit :Utwórz%>
+		</p>
+
+	<% end %>

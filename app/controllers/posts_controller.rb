@@ -6,14 +6,20 @@ class PostsController < ApplicationController
 
 	def new
 		@post = Post.new
+		@categories = Category.all.map do |category| 
+    		[category.title, category.id] 
 	end
 
 	def create
 		@post = Post.new(post_params)
+		
 		if @post.save
-			redirect_to @post
+		flash[:notice]="Komitet został dodany!"
+        redirect_to posts_path
+       
 		else
-			render "new"
+			 render :action => 'new'
+			
 		end
 	end
 
@@ -46,9 +52,16 @@ class PostsController < ApplicationController
 	private
 		def post_params
 
-			params.require(:post).permit(:title, :body)
+			params.require(:post).permit(:title, :body, :category_id)
+
 		end
 			
 		
 
-end
+
+    end
+
+
+ 
+
+

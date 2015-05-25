@@ -1,0 +1,33 @@
+<nav>
+
+      <ul class="nav navbar-nav navbar-left">
+
+      <%= link_to "Salon poezji", root_path, class: 'navbar-brand' %>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+
+     
+				
+				
+				<li><%=link_to "O nas", about_path %></li>
+				<li><%= link_to "Nowa kategoria", new_category_path %></li>
+				<li><%= link_to "Kategorie", categories_path %></li>
+				<li><%= link_to "New Post", new_post_path %></li>
+				 <li><%= link_to 'Edit Profile',edit_user_registration_path %></li>
+	
+
+			<% if user_signed_in? %>
+			
+				
+				<li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+				<li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li>
+		   
+		    <% else %>
+		    	<li><%= link_to 'Logowanie', new_user_session_path %></li>
+		    	<li><%= link_to 'Rejestracja',
+		    		new_user_registration_path %> </li>
+		    <% end %>
+
+		</ul>
+</nav>

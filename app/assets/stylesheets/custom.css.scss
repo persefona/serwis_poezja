@@ -1,0 +1,89 @@
+@import "bootstrap";
+
+.field_with_errors { @extend .has-error; }
+.alert-notice { @extend .alert-info; }
+.alert-alert { @extend .alert-danger; }
+
+body {
+	margin: 0px;
+
+	
+}
+
+.round-image-50 {
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    text-align: center;
+    img { width: 100% }
+}
+
+
+/* Posts */
+
+ .postf { background-color: #FFEEBB;}
+
+ .bodypost {
+    padding: 0px 400px 7px 400px;
+
+ }
+
+ .datepost {
+      padding: 0 400px 0 400px;
+ }
+
+ .titlepost {
+    padding: 0 400px 0 400px;
+ }
+
+ .button2 {
+    padding: 0 1px 0 600px;
+ }
+
+
+/* Slider */
+
+ .carousel {
+    margin: 0px;
+ }
+
+
+/* image na About us */
+#profile_image {
+    margin: 100px;
+}
+
+#content {
+    margin: 100px;
+}
+
+/* layout logowania*/
+
+#page_wrapper {
+    margin: 100px;
+}
+
+
+/*Stopka*/
+.panel-footer {
+    background-color: black;
+    margin-top: 200px;
+}
+
+
+
+
+.title_category {
+    margin-top: 10px;
+    margin-left: 100px;
+     
+}
+
+.category {
+    margin-top: 100px;
+}

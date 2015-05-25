@@ -1,7 +1,11 @@
-<div id="post_content">
 	<h1 class="title">
 		<%= @post.title %>
 	</h1>
+
+
+	<p>
+		<%= @post.category.title %> </p>
+
 
 	<p class_"date">
 		Submitted <%= time_ago_in_words(@post.created_at) %> Ago
@@ -12,6 +16,7 @@
 	</p>
 
 	<p class="body"><%= @post.body %></p>
+	<!-- <p class="comment"><%= @post.body %></p> -->
 
 	<div id="comments">
 		<h2><%= @post.comments.count %> Komentarze</h2>
@@ -22,4 +27,3 @@
 
 	</div>
 
-</div>

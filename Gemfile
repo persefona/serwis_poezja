@@ -28,6 +28,12 @@ gem 'spring',        group: :development
 
 gem 'devise', '~> 3.3.0'
 
+gem 'sass-rails', '~> 4.0.3' ###### THIS SHOULD ALREADY BE THERE
+
+gem 'bootstrap-sass', '~> 3.1.1'
+
+gem 'paperclip', '~> 4.1'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

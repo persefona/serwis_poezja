@@ -1,0 +1,14 @@
+<div class="category">
+
+<% @categories.each do |category| %>
+	<div class="title_category"	>
+		<h1>
+			<%= category.title %>
+		</h1>
+
+		<%= link_to 'Edycja', edit_category_path(category) %>
+	    <%= link_to 'Usuń', category_path(category), method: :delete, data: { confirm: 'jesteś pewien?'} %>
+	</div>
+
+<% end %>
+</div>

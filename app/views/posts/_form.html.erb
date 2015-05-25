@@ -10,14 +10,18 @@
 				</ul>
 			</div>
 	<% end %>
+
 		<p>
-			<%= f.label :title %><br>
+		 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Wybierz kategorie") %>
+		 </p>
+
+				<%= f.label :title %><br>
 			<%= f.text_field :title %>
 		</p>
 
 		<p>
 			<%= f.label :body %><br>
-			<%= f.text_area :body %>
+			<%= f.text_area :body,  :style => 'width: 50%; height: 200px;' %>
 		</p>
 
 		<p>
@@ -25,3 +29,5 @@
 		</p>
 
 	<% end %>
+
+
