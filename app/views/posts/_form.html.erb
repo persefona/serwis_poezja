@@ -11,11 +11,12 @@
 			</div>
 	<% end %>
 
-		<p>
-		 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Wybierz kategorie") %>
+		 <p>
+			 <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Wybierz kategorie") %>
 		 </p>
 
-				<%= f.label :title %><br>
+		<p>
+			<%= f.label :title %><br>
 			<%= f.text_field :title %>
 		</p>
 

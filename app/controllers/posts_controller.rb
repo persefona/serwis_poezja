@@ -12,9 +12,9 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new(post_params)
-		
+
 		if @post.save
-		flash[:notice]="Komitet został dodany!"
+		flash[:notice]="Post został dodany!"
         redirect_to posts_path
        
 		else
