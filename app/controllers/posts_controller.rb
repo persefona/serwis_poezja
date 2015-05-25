@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 		@categories = Category.all.map do |category| 
     		[category.title, category.id] 
 	end
+end
 
 	def create
 		@post = Post.new(post_params)
@@ -55,11 +56,10 @@ class PostsController < ApplicationController
 			params.require(:post).permit(:title, :body, :category_id)
 
 		end
-			
-		
+				
+	 end
 
-
-    end
+	
 
 
  
