@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, except: [:index,:show]
+	before_filter :authenticate_user!
+	load_and_authorize_resource
+	 before_action :set_post, only: [:show, :edit, :update, :destroy]
+	
+
 	def index
 		@posts = Post.all.order('created_at DESC')
 	end
@@ -58,6 +62,10 @@ end
 
 			params.require(:post).permit(:title, :body, :category_id, :user_id)
 
+		end
+
+		 def set_post
+			@post = Post.find(params[:id])
 		end
 				
 	 end
