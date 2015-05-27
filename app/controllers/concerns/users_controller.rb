@@ -60,7 +60,7 @@ before_action :set_user, only: [:show, :edit, :update]
 	def set_roles
 		@roles = Role.all.map do |role|
 		[role.name, role.id]
-	end
+	    end
 	end
 
 	 def set_user
