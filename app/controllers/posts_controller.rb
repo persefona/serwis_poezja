@@ -12,9 +12,12 @@ class PostsController < ApplicationController
 end
 
 	def create
+		
 		@post = Post.new(post_params)
+		@post.user_id = current_user.id
 
 		if @post.save
+
 		flash[:notice]="Post został dodany!"
         redirect_to posts_path
        
@@ -53,7 +56,7 @@ end
 	private
 		def post_params
 
-			params.require(:post).permit(:title, :body, :category_id)
+			params.require(:post).permit(:title, :body, :category_id, :user_id)
 
 		end
 				

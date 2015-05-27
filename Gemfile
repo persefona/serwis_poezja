@@ -44,3 +44,9 @@ gem 'paperclip', '~> 4.1'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# Use authentication
+gem 'authlogic'
+
+gem 'cancancan', '~> 1.10'
+# Use Polish language
+gem 'polish'

@@ -14,6 +14,10 @@
 			<div class="erotyk">
 	<% elsif @post.category.title == "aforyzm" %> 
 	     	<div class="aforyzm">
+	<% elsif @post.category.title == "haiku" %> 
+	     	<div class="haiku">
+	<% elsif @post.category.title == "wiersz" %> 
+	     	<div class="wiersz">
 	<% else %>
 	  	 	<div class="limeryk">
 	<% end %>

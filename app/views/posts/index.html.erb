@@ -11,7 +11,7 @@
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="/assets/jesien.jpg" alt="...">
+      <img src="/assets/droga.jpg" alt="...">
       <div class="carousel-caption">
           <h3> Dołącz do nas </h3>
           <h1><%= link_to 'Zaloguj', new_user_session_path, {:style=>"color:#fff;"} %> </h1>
@@ -56,6 +56,19 @@
 
 
 <% @posts.each do |post| %>
+
+
+  <% if post.category.title == "erotyk" %>
+      <div class="erotyk">
+  <% elsif post.category.title == "aforyzm" %> 
+        <div class="aforyzm">
+  <% elsif post.category.title == "haiku" %> 
+        <div class="haiku">
+  <% elsif post.category.title == "wiersz" %> 
+        <div class="wiersz">
+  <% else %>
+        <div class="limeryk">
+  <% end %>
 	
 		
 		<!-- Widok na WIERSZE-->

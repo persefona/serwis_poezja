@@ -1,0 +1,24 @@
+<div class="row">
+  <h3> 
+    <strong>Login:</strong>
+    <%= @user.login %>
+  </h3>
+</div>
+<div class="row">
+   <%= @user.role.name %>
+</div>
+<div class="row">
+  <strong>Email:</strong>
+  <%= @user.email %>
+</div>
+
+  <strong>Ostatnie logowanie:</strong>
+  <%= @last_login %>
+</div>
+<br />
+<% if user_signed_in? %>
+  <div class="row">
+    <%= link_to 'Edytuj dane', edit_user_path(@user) %> |
+    <%= link_to 'Wróć do listy', users_path %>
+  </div>
+<% end %>
