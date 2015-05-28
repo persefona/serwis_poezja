@@ -51,6 +51,12 @@
 </div> <!-- Carousel -->
 
 
+<div>
+<% @categories.each do |category| %>
+  <%= link_to category.title, category %>
+<% end %>
+</div>
+
 
 
 

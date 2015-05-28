@@ -1,18 +1,15 @@
-<div clas="row">
-  <h1>Lista użytkowników</h1>
-  <hr />
-</div>
+
 
 <div class="row">
-  <%= link_to "Dodaj", new_user_path, :id => "button_id", :class => "btn btn-default btn-lg" %>  
-  <hr />
+ <h1>Lista użytkowników</h1>
+
 </div>
 <div class="row">
 <table class="table table-hover">
   <thead>
     <tr>
       <th>Id</th>
-      <th class="text-center" >Login</th>
+      
       <th class="text-center" >Email</th>
      
       <th colspan="2"></th>
@@ -23,12 +20,16 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.id %></td>
-        <td class="text-center"><%= user.login %></td>
+       
         <td class="text-center"><%= user.email %></td>
-        <td class="text-center"><%= user.role %></td>
+        <td class="text-center"><%= user.role.name  unless user.role.nil?%></td>
+
+
+
         <td><%= link_to 'Wyświetl', user %></td>
         <td><%= link_to 'Edytuj', edit_user_path(user) %></td>
-      </tr>
+        <td><%= link_to 'Usuń', user_path(user), method: :delete, data: { confirm: 'jesteś pewien?'} %>
+      </td>
     <% end %>
   </tbody>
 </table>
