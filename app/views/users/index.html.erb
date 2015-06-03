@@ -9,8 +9,9 @@
   <thead>
     <tr>
       <th>Id</th>
-      
+      <th class="text-center" >Login</th>
       <th class="text-center" >Email</th>
+      <th class="text-center" >Rola</th>
      
       <th colspan="2"></th>
     </tr>
@@ -20,9 +21,10 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.id %></td>
-       
+        <td class="text-center"><%= user.login %></td>
         <td class="text-center"><%= user.email %></td>
         <td class="text-center"><%= user.role.name  unless user.role.nil?%></td>
+        <td class="round-image-50"><%= image_tag(user.avatar.url(:thumb)) %></td>
 
 
 

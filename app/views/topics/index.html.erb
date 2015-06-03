@@ -1,0 +1,14 @@
+<div class="category">
+
+<% @topics.each do |topic| %>
+	<div class="title_category"	>
+		<h1>
+			<%= topic.name %>
+		</h1>
+
+		<%= link_to 'Edycja', edit_topic_path(topic) %>
+	    <%= link_to 'Usuń', topic_path(topic), method: :delete, data: { confirm: 'jesteś pewien?'} %>
+	</div>
+
+<% end %>
+</div>

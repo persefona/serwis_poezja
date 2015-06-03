@@ -1,0 +1,22 @@
+<%= form_for @topic do |f| %>
+		<% if @topic.errors.any? %>
+			<div id="errors"> <!-- zabezpieczenie na wypadek zapisywania pustego posta -->
+				<h2><%= pluralize(@topic.errors.count, "error") %> </h2>
+
+				<ul>
+					<% @topic.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+			</div>
+	<% end %>
+		<p>
+			<%= f.label :Nazwa %><br>
+			<%= f.text_field :name %>
+		</p>
+
+		<p>
+			<%= f.submit :Utwórz%>
+		</p>
+
+	<% end %>

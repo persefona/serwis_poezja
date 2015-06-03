@@ -1,17 +1,27 @@
-<div class="comment clearfix">
-	<div class="comment_content">
-		<p class="comment_name"><strong><%= comment.name %></strong></p>
-		<p class="comment_body"><%= comment.body %></p>
-		<p class="comment_time"><%= comment.created_at.strftime(" %d.%m.%Y ")%> </p>
-	</div>
 
+
+    <div class="media">
+        <a href="#" class="thumbnail pull-left">
+            <img class="round-image-50" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png" alt="The Acropolis" />
+        </a>
+        <div class="media-body">
+        <p class="comment_time">Dodano:<%= comment.created_at.strftime(" %d.%m.%Y ")%> przez <%= link_to @post.user.login %> </p>
+        <p class="comment_body"><%= comment.body %></p>
+   
+         
 	<% if user_signed_in? %>
-		<p><%= link_to 'Usuń”', [comment.post, comment],
+		<% if can? :destroy, comment %>
+		<p><%= link_to 'Usuń', [comment.post, comment],
 			method: :delete,
 			class: "button",
 			data: { confirm: "Czy jesteś pewien"} %>
 		</p>
+		<% end %>
     <% end %>
 
-	
-</div>
+   </div>
+
+
+
+
+            

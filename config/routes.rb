@@ -12,6 +12,8 @@ end
     end
 
    resources :categories
+
+   resources :topics
    root "posts#index"
 
    get '/about', to: 'pages#about'

@@ -29,16 +29,16 @@ body {
 /* .postf { background-color: #FFEEBB;} */
 
  .bodypost {
-    padding: 0px 400px 7px 400px;
+    padding: 0px 500px 7px 500px;
 
  }
 
  .datepost {
-      padding: 0 400px 0 400px;
+      padding: 0 500px 0 500px;
  }
 
  .titlepost {
-    padding: 0 400px 0 400px;
+    padding: 30px 500px 0 500px;
  }
 
  .button2 {
@@ -92,26 +92,63 @@ body {
     margin: 100px;
 }
 
+.post-one {
+     text-align: center;
+     margin-top: 1%;
+}
+
+.comments {
+    margin: 100px;
+}
+
+
+/*box komentarzy*/
+.media-body {
+  width:100%;
+  border:3px solid #EEE;
+  padding:15px;
+  background-color:#EEE;
+}
 
 /* Kolory pasów*/
 .erotyk {
-    background-color:  #ffccbb;
+    width:100%;
+    height: 250px;
+    margin:0px;
+    background-image:linear-gradient(white, #ff7445);
+
 }
 
 .aforyzm {
-    background-color: #eefbff;
+    width:100%;
+    height: 250px;
+    margin:0px;
+     background-image:linear-gradient(white, #bbccff);
+
 }
 
 .limeryk {
-    background-color: #ffffbb;
+     width:100%;
+    height: 250px;
+    margin:0px;
+    background-image:linear-gradient(white, #834d27);
+
 }
 
 .wiersz {
-    background-color: #FFEEBB;
+     width:100%;
+    height: 250px;
+    margin:0px;
+    background-image:linear-gradient(white, #ffeebb);
+   
 }
 
 .haiku {
-    background-color: #eeffbb;
+     width:100%;
+    height: 250px;
+    margin:0px;
+    background-image:linear-gradient(white, #c1e764);
+   
 }
 
 
@@ -121,5 +158,10 @@ body {
     margin: 500px;  
 }
 .row {
-    margin: 50px;
+    margin: 5%;
+}
+
+
+.control-l {
+  margin-left: 180px;
 }

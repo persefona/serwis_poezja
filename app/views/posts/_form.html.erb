@@ -15,18 +15,22 @@
 			 <%= f.label :category_id, "Kategoria" %> <%= f.select :category_id, @categories %>
 		 </p>
 
+		  <p>
+			 <%= f.label :topic_id, "Temat" %> <%= f.select :topic_id, @topics %>
+		 </p>
+
 		<p>
-			<%= f.label :title %><br>
+			<%= f.label :Tytuł %><br>
 			<%= f.text_field :title %>
 		</p>
 
 		<p>
-			<%= f.label :body %><br>
-			<%= f.text_area :body,  :style => 'width: 50%; height: 200px;' %>
+			<%= f.label :wiersz %><br>
+			<%= f.text_area :body,  :style => 'width: 50%; height: 300px;' %>
 		</p>
 
 		<p>
-			<%= f.submit %>
+			<%= f.submit "Wyślij" %>
 		</p>
 
 	<% end %>

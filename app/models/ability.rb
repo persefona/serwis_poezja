@@ -32,11 +32,27 @@ class Ability
 
     if user.admin?
       can :manage, :all
-    else
-      can :read, :all
+    elsif user.regular?
+      can :read, Post
+      can :create, Post
+      can :update, Post do |post|
+        post.try(:user) == user
+      end
+      can :destroy, Post do |post|
+        post.try(:user) == user
+      end
+      can :read, Comment
+      can :create, Comment
+      can :update, Comment do |comment|
+        comment.try(:user) == user
+      can :read, User
+      end
       
+    else
+      can :read, Post  
     end
+
+
   end
-  
-  end
+end
 

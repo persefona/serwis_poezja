@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-	#before_filter :authenticate_user!
-	#load_and_authorize_resource 
+	before_filter :authenticate_user!
+	load_and_authorize_resource 
 	 before_action :set_post, only: [:show, :edit, :update, :destroy]
 	
 
@@ -12,8 +12,11 @@ class PostsController < ApplicationController
 		@post = Post.new
 		@categories = Category.all.map do |category| 
     		[category.title, category.id] 
-	end
-end
+		end
+		@topics = Topic.all.map do |topic| 
+	    		[topic.name, topic.id] 
+		end
+    end
 
 	def create
 		
@@ -37,6 +40,12 @@ end
 
 	def edit
 		@post = Post.find(params[:id])
+		@categories = Category.all.map do |category| 
+    		[category.title, category.id] 
+		end
+		@topics = Topic.all.map do |topic| 
+	    		[topic.name, topic.id] 
+		end
 	end
 
 	def update 
@@ -60,7 +69,7 @@ end
 	private
 		def post_params
 
-			params.require(:post).permit(:title, :body, :category_id, :user_id)
+			params.require(:post).permit(:title, :body, :category_id, :topic_id, :user_id)
 
 		end
 
