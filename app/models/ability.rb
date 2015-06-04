@@ -30,6 +30,9 @@ class Ability
     # https://github.com/CanCanCommunity/cancancan/wiki/Defining-Abilities
 
 
+
+    #user ||= Post.new
+
     if user.admin?
       can :manage, :all
     elsif user.regular?
@@ -49,7 +52,7 @@ class Ability
       end
       
     else
-      can :read, Post  
+      can :read, :all  
     end
 
 

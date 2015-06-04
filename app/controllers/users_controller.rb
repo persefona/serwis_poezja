@@ -1,42 +1,23 @@
 class UsersController < ApplicationController
-before_filter :authenticate_user!
-load_and_authorize_resource
+before_filter :authenticate_user!,  :except => [:index]
+#load_and_authorize_resource
+skip_authorize_resource :except => [:index, :show]
 before_action :set_roles, only: [:new, :create, :edit, :update, :destroy]
 before_action :set_user, only: [:show, :edit, :update]
 
 	def new
-		@user = User.new
+	
 	end
 
 	def create
-		@user = User.new(user_params)
-		if @user.save
-			flash[:notice]="Rejestracja przebiegła pomyślnie!"
-			redirect_to users_path
-		else
-			render :action => 'new'
-		end
+	
 	end
 
 	def edit
 	end
 
 	def update
-		if user_params[:password].blank?
-			user_params.delete(:password)
-			user_params.delete(:password_confirmation)
-		end
-			successfully_updated = if needs_password?(@user, user_params)
-			@user.update(user_params)
-		else
-			@user.update_without_password(user_params)
-		end
-		if successfully_updated
-			flash[:notice] = 'Dane zostały zmienione'
-			redirect_to @user
-		else
-			render action: 'edit'
-		end
+		
 	end
 
 	def show

@@ -85,7 +85,8 @@
                  
          <h2 class="titlepost"><%= link_to post.title, post, {:style=>"color:#FF6622;"} %></h2>
          <p class="datepost"><%= post.created_at.strftime("%B, %d, %Y") %></p>
-         <p class="bodypost"><%= post.body %></p>
+         <p class="bodypost"><% post.body.split[0...15].each do |m| %><%= m + " " %><% end %>
+         </p>
           <p class="button2"><%= link_to "Czytaj dalej", post %></p>
         </div>      
 

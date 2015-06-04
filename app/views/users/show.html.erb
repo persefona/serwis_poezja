@@ -1,12 +1,16 @@
 
 
 <div class="row">
-  <strong>Email:</strong>
-  <%= @user.email %>
-</div>
-
   <strong>Ostatnie logowanie:</strong>
   <%= @last_login %>
+  <br>
+  <strong>Login:</strong>
+  <%= @user.login %>
+  <br>
+  <strong>Email:</strong>
+  <%= @user.email %>
+  <br>
+ 
 </div>
 <br />
 <% if user_signed_in? %>
@@ -15,3 +19,41 @@
     <%= link_to 'Wróć do listy', users_path %>
   </div>
 <% end %>
+
+
+
+
+
+
+<div class="row">
+ <h1>Lista wierszy</h1>
+
+</div>
+<div class="row">
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th class="text-center" >Tytuł</th>
+      <th class="text-center" >Kategoria</th>
+      <th class="text-center" >Temat</th>
+     
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.posts.each do |post| %>
+      <tr>
+      	<td class="text-center"><%= link_to post.title, post, {:style=>"color:#FF6622;"} %></td>
+        <td class="text-center"><%= post.category.title %></td>
+        <td class="text-center"><%= post.topic %></td>
+        <td><%= link_to 'Edytuj', edit_post_path(post) %></td>
+        <td><%= link_to 'Usuń', post_path(post), method: :delete, data: { confirm: 'jesteś pewien?'} %>
+      </td>
+    <% end %>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+   

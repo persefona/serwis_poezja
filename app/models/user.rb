@@ -25,4 +25,6 @@ def regular?
   self.role.name == "Regular"
 end
 
+
+
 end
