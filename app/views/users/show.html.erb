@@ -14,6 +14,7 @@
 </div>
 <br />
 <% if user_signed_in? %>
+
   <div class="row">
     <%= link_to 'Edytuj dane', edit_user_path(@user) %> |
     <%= link_to 'Wróć do listy', users_path %>
@@ -47,9 +48,16 @@
       	<td class="text-center"><%= link_to post.title, post, {:style=>"color:#FF6622;"} %></td>
         <td class="text-center"><%= post.category.title %></td>
         <td class="text-center"><%= post.topic %></td>
-        <td><%= link_to 'Edytuj', edit_post_path(post) %></td>
-        <td><%= link_to 'Usuń', post_path(post), method: :delete, data: { confirm: 'jesteś pewien?'} %>
-      </td>
+       
+
+        
+      <% if can? :update, post %>
+      <td><%= link_to 'Edycja', edit_post_path(post) %></td>
+      <% end %>
+      <% if can? :destroy, post %>
+      <td><%= link_to 'Usuń', post_path(post), method: :delete, data: { confirm: 'jesteś pewien?'} %></td>
+      <% end %>
+
     <% end %>
     </tr>
   </tbody>

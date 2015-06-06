@@ -15,6 +15,7 @@
 				<% if user_signed_in? %>
 
 					<li><%=link_to "Użytkownicy", users_path %></li>
+					<li><%= link_to "Moje wiersze", current_user %></li>
 
 					<% if current_user.admin? %> 
 						<li><%= link_to "Tematy", topics_path %></li>

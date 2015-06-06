@@ -5,10 +5,10 @@
 .alert-alert { @extend .alert-danger; }
 
 body {
-	margin: 0px;
-
-	
+	margin: 0px;	
 }
+
+
 
 .round-image-50 {
     background-color: white;
@@ -72,8 +72,9 @@ body {
 /*Stopka*/
 .panel-footer {
     background-color: black;
-    margin-top: 200px;
-}
+      width:100%;
+  }
+ 
 
 
 
@@ -164,4 +165,24 @@ body {
 
 .control-l {
   margin-left: 180px;
+}
+
+.alert{
+  margin-top: 50px;
+  margin-bottom: 0px;
+}
+
+.register {
+  background-color: red;
+
+}
+
+.login, .registration {
+ background-image: url("/assets/las.jpg");
+    height: 100%;
+}
+
+.about {
+  background-image: url("/assets/two-butter.jpg");
+    height: 100%;
 }

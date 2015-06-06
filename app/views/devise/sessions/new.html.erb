@@ -1,19 +1,53 @@
-<div id="page_wrapper">
-	<h2>Logowanie</h2>
+<div class="panel-body login">
+<div class="row">
+  <h1>Logowanie</h1>
+   <style>
+    h1 {color:#25140d;
+        margin-top: 100px;
+    }
+  </style>
+  <br />
 
-	<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-	  <div><%= f.label :email %><br />
-	  <%= f.email_field :email, autofocus: true %></div>
-	  <br>
-	  <div><%= f.label :hasło %><br />
-	    <%= f.password_field :password, autocomplete: "off" %></div>
-	   <br>
-	  <% if devise_mapping.rememberable? -%>
-	    <div><%= f.check_box :remember_me %> <%= f.label :zapamiętaj_hasło %></div>
-	  <% end -%>
-	  <br>
-	  <div><%= f.submit "Zaloguj" %></div>
-	<% end %>
-	   <br>
-	<%= render "devise/shared/links" %>
+
+
+<div class="col-md-8">
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-horizontal") do |f| %>
+  <div class="form-group">
+    <%= f.label :email, "Email", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10"><%= f.email_field :email, autofocus: true, class: "form-control" %></div>
+  </div>
+  <br />
+  <div class="form-group">
+    <%= f.label :password, "Hasło", class: "col-sm-2 control-label" %>
+    <div class="col-sm-10"><%= f.password_field :password, autocomplete: "off", class: "form-control" %></div>
+  </div>
+  <br />
+  <% if devise_mapping.rememberable? -%>
+    <br />
+    <div class="form-group">
+      <%= f.check_box :remember_me, class: "col-sm-2 control-label" %>
+      <div class="col-sm-10"><%= f.label :remember_me, "Zapamiętaj mnie" %></div>
+    </div>
+    <br />
+  <% end -%>
+  <div class="form-group">
+     <div class="col-sm-offset-2 col-sm-10">
+      <%= f.submit "Zaloguj", class: "btn btn-primary" %><br>
+       <%= render "devise/shared/links" %>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       
+    </div>
+  </div>
+<% end %>
+</div>
+</div>
+
+
+
+
 </div>

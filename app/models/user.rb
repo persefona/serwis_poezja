@@ -13,17 +13,20 @@ class User < ActiveRecord::Base
 
   before_save :assign_role
 
-def assign_role
-  self.role = Role.find_by name: "Regular" if self.role.nil?
-end
+   validates :password,
+    :confirmation => {:message => "Hasła nie pasują"}
 
-def admin?
-	self.role.name == "Admin"
-end
+    def assign_role
+      self.role = Role.find_by name: "Regular" if self.role.nil?
+    end
 
-def regular?
-  self.role.name == "Regular"
-end
+    def admin?
+    	self.role.name == "Admin"
+    end
+
+    def regular?
+      self.role.name == "Regular"
+    end
 
 
 

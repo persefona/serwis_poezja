@@ -31,8 +31,7 @@ class Ability
 
 
 
-    #user ||= Post.new
-
+    
     if user.admin?
       can :manage, :all
     elsif user.regular?

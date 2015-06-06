@@ -23,7 +23,8 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-      
+
+    
         <td class="text-center "><%=  user.login%></td>
       
             <% if current_user.admin? %> 
@@ -33,7 +34,7 @@
 
 
 
-       <td class="text-center"><%= link_to 'Wiersze', user %></td>
+       <td class="text-center"><%= link_to 'Wiersze:  ', user %><%= user.posts.count unless user.posts.count.nil? %></td>
           <% if current_user.admin? %> 
               <td><%= link_to 'Edytuj', edit_user_path(user) %></td>
               <td><%= link_to 'Usuń', user_path(user), method: :delete, data: { confirm: 'jesteś pewien?'} %>

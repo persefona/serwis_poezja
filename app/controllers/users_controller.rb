@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 before_filter :authenticate_user!,  :except => [:index]
-#load_and_authorize_resource
+load_and_authorize_resource
 skip_authorize_resource :except => [:index, :show]
 before_action :set_roles, only: [:new, :create, :edit, :update, :destroy]
 before_action :set_user, only: [:show, :edit, :update]
@@ -17,8 +17,22 @@ before_action :set_user, only: [:show, :edit, :update]
 	end
 
 	def update
-		
-	end
+    if user_params[:password].blank?
+      user_params.delete(:password)
+      user_params.delete(:password_confirmation)
+    end 
+    successfully_updated = if needs_password?(@user, user_params)
+      @user.update(user_params)
+    else
+      @user.update_without_password(user_params)
+    end 
+    if successfully_updated
+      flash[:notice] = 'Dane zostały zmienione'
+      redirect_to @user
+    else
+      render action: 'edit'
+    end
+  end
 
 	def show
 		if @user.current_sign_in_at
@@ -44,7 +58,7 @@ before_action :set_user, only: [:show, :edit, :update]
 	private
 
 	def user_params
-		params.require(:user).permit(:login, :password, :password_confirmation, :role_id, :email)
+		params.require(:user).permit(:login, :password, :password_confirmation, :role_id, :email, :avatar)
 	end
 
 	def set_roles

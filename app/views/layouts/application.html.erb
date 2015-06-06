@@ -7,7 +7,18 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body >
+
+
+
+ <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %> alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <%= value %>
+      </div>
+  <% end %>
+
+  
 
 
   <header class="navbar navbar-fixed-top navbar-inverse">
@@ -15,28 +26,9 @@
 	   <%= render 'layouts/menu' %>
 	  </div>
   </header>
-
-
-
- <% flash.each do | value| %>
-      <div class="alert">
-       
-        <%= value %>
-      </div>
-  <% end %>
-
-
-
-<% flash.each do |name,msg| %> <!-- podświetlanie linków -->
- <button type="button" class="close" data-dismiss="alert"> &times;</button>
-	<%= content_tag(:div, msg, class: "alert-alert error
-		") %>
-
-		<% end %>
-
     
 		<%= yield %>
-    </div>
+  
 
 
     <!-- Bootstrap core JavaScript
@@ -49,8 +41,11 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-</body>
-<footer>
+
+    <footer>
    <div class="panel-footer">By Anna Banaś</div>
 </footer>
+
+</body>
+
 </html>

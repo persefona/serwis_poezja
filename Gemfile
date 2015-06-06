@@ -28,7 +28,13 @@ gem 'spring',        group: :development
 
 gem 'devise', '~> 3.3.0'
 
+gem 'devise-i18n'
+
 gem 'bootstrap-sass', '~> 3.1.1'
+
+group :development do
+gem "better_errors"
+end
 
 gem 'paperclip', '~> 4.1'
 
