@@ -24,6 +24,26 @@ body {
 }
 
 
+
+.first {
+  color: white;
+  background-color: #333333;
+}
+
+.cell {
+  background-color: #f9f9f9;
+}
+
+/* próba wprowadzenia gradientu jako tła */
+.poems-list {
+
+   background-image:linear-gradient(white, #ddb923, #b68248, #c09261 , #dcb857,  #dcb22a);
+  
+    height: 650px;
+}
+
+
+
 /* Posts */
 
 /* .postf { background-color: #FFEEBB;} */
@@ -59,7 +79,8 @@ body {
 }
 
 #content {
-    margin: 100px;
+    margin-top: 100px;
+    margin-left: 150px;
 }
 
 /* layout logowania*/
@@ -132,7 +153,7 @@ body {
      width:100%;
     height: 250px;
     margin:0px;
-    background-image:linear-gradient(white, #834d27);
+    background-image:linear-gradient(white, #dab463 );
 
 }
 
@@ -140,7 +161,7 @@ body {
      width:100%;
     height: 250px;
     margin:0px;
-    background-image:linear-gradient(white, #ffeebb);
+    background-image:linear-gradient(white, #e5a330);
    
 }
 
@@ -184,5 +205,10 @@ body {
 
 .about {
   background-image: url("/assets/two-butter.jpg");
-    height: 100%;
+    height: 650px;
 }
+
+
+.poem {
+  background-image: url("/assets/two-butter.jpg");
+  }

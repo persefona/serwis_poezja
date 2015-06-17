@@ -1,14 +1,35 @@
 <div class ="panel-body about">
-	<div id="profile_image">
-		<%= image_tag "kot.jpg" %>
-	</div>
-
+	
 	<div id="content">
-		<h1>No hej! :) </h1>
-		<p>Witam na moim pierwszym kocim blogu xD.</p>
-		<p>Ciekawe jak mi to pójdzie dalej..</p>
+		<h2>Witaj w <i>Salonie Poezji! </i></h2>
+		<br>
+
+		<style>
+		h2 {color: #0f0e0a;}
+		</style>
+
+	
+		<p>Celem serwisu jest przełamywanie barier pomiędzy środowiskiem osób<br>
+		po kryzysach psychicznych, a społecznością ludzi zdrowych. </p>
+
+		<p>Mam nadzieję, że wykreowany tutaj świat poezji, stanie się miejscem <br>wzajemnego poznawania, zdrowienia, ale i chwili relaksu. </p>
+
+		<style>
+		p {
+    		font-size: 20px;
+    		color:#0f0e0a ;
+		}
+		</style>
+
+
+	<style>
+	  	h3 {color:#361d16;}
+	 </style>
+		<p> Dołącz do nas! <br> <%= link_to 'Zaloguj się', new_user_session_path, {:style=>"color:#fff;"} %> </p>
 	
 	</div>
-	<br>
+
+
+	
 
 </div>

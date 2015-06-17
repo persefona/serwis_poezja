@@ -47,8 +47,9 @@ class Ability
       can :create, Comment
       can :update, Comment do |comment|
         comment.try(:user) == user
-      can :read, User
       end
+
+       can :read, User
       
     else
       can :read, :all  

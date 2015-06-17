@@ -1,39 +1,15 @@
-
-
-<div class="row">
-  <strong>Ostatnie logowanie:</strong>
-  <%= @last_login %>
-  <br>
-  <strong>Login:</strong>
-  <%= @user.login %>
-  <br>
-  <strong>Email:</strong>
-  <%= @user.email %>
-  <br>
- 
-</div>
-<br />
-<% if user_signed_in? %>
-
-  <div class="row">
-    <%= link_to 'Edytuj dane', edit_user_path(@user) %> |
-    <%= link_to 'Wróć do listy', users_path %>
-  </div>
-<% end %>
-
-
-
-
+<div class ="panel-body about ">
 
 
 <div class="row">
  <h1>Lista wierszy</h1>
+ <h4>Liczba wierszy: <%= @user.posts.count unless @user.posts.count.nil? %></h4>
 
 </div>
 <div class="row">
-<table class="table table-hover">
+<table class="table table-hover table-striped">
   <thead>
-    <tr>
+    <tr class="first">
       <th class="text-center" >Tytuł</th>
       <th class="text-center" >Kategoria</th>
       <th class="text-center" >Temat</th>
@@ -44,18 +20,18 @@
 
   <tbody>
     <% @user.posts.each do |post| %>
-      <tr>
+      <tr class="cell">
       	<td class="text-center"><%= link_to post.title, post, {:style=>"color:#FF6622;"} %></td>
         <td class="text-center"><%= post.category.title %></td>
-        <td class="text-center"><%= post.topic %></td>
+        <td class="text-center"><%= post.topic.name %></td>
        
 
         
-      <% if can? :update, post %>
+
       <td><%= link_to 'Edycja', edit_post_path(post) %></td>
-      <% end %>
+
       <% if can? :destroy, post %>
-      <td><%= link_to 'Usuń', post_path(post), method: :delete, data: { confirm: 'jesteś pewien?'} %></td>
+      <td class="link"><%= link_to 'Usuń',  post_path(post), method: :delete,  data: { confirm: 'jesteś pewien?'} %></td>
       <% end %>
 
     <% end %>
@@ -64,4 +40,5 @@
 </table>
 </div>
 </div>
-   
+  
+

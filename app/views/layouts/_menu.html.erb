@@ -10,11 +10,11 @@
      
 				
 				
-				<li><%=link_to "O nas", about_path %></li>
+				<li><%=link_to "O nas", about_path, class: 'brand' %></li>
 				
 				<% if user_signed_in? %>
 
-					<li><%=link_to "Użytkownicy", users_path %></li>
+					
 					<li><%= link_to "Moje wiersze", current_user %></li>
 
 					<% if current_user.admin? %> 
@@ -25,8 +25,9 @@
 						<li><%= link_to "Kategorie", categories_path %></li>
 					<% end %>
 
-				<li><%= link_to "Nowy wiersz", new_post_path %></li>
+				<li><%= link_to "Dodaj wiersz", new_post_path %></li>
 				<li><%= link_to 'Edycja profilu',edit_user_registration_path %></li>
+				<li><%=link_to "Użytkownicy", users_path %></li>
 	
 			
 				

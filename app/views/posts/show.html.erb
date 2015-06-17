@@ -1,5 +1,5 @@
 	
-<div class="post_wrapper">
+<div class="post_wrapper ">
 
 
 
@@ -24,8 +24,8 @@
 		<h1 class="title">
 			<%= @post.title %>
 		</h1>
-
-		<p class="body"><%= @post.body %></p>
+		
+		<p class="body"><%=  @post.body.html_safe %></p>
 		<!-- <p class="comment"><%= @post.body %></p> -->
 	</div>
 
@@ -60,17 +60,28 @@
  </p>
 
 	</div>
-</div>
+	</div>
+	</div>
+	</div>
+	</div>
+
 
 
 	<div class="comments">
 		<h3>Komentarze: <%= @post.comments.count %></h3>
 		<%= render @post.comments %>
-
+	<% if user_signed_in? %>
 		<h4>Dodaj komentarz:</h4>
 		<%= render "comments/form" %>
-
+	<% end %>
     </div>
+
+</div>
+
+
+
+
+
 
 	
 

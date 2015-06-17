@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!
-	load_and_authorize_resource 
+	before_action :authenticate_user!, only: [:add, :edit, :update, :new, :destroy]
+	
 	 before_action :set_post, only: [:show, :edit, :update, :destroy]
 	
 
@@ -22,6 +22,13 @@ class PostsController < ApplicationController
 		
 		@post = Post.new(post_params)
 		@post.user_id = current_user.id
+
+			@categories = Category.all.map do |category| 
+    		[category.title, category.id] 
+		end
+		@topics = Topic.all.map do |topic| 
+	    		[topic.name, topic.id] 
+		end
 
 		if @post.save
 
@@ -47,10 +54,18 @@ class PostsController < ApplicationController
 		@topics = Topic.all.map do |topic| 
 	    		[topic.name, topic.id] 
 		end
+		authorize! :update, @post
 	end
 
 	def update 
 		@post = Post.find(params[:id])
+
+			@categories = Category.all.map do |category| 
+    		[category.title, category.id] 
+		end
+		@topics = Topic.all.map do |topic| 
+	    		[topic.name, topic.id] 
+		end
 
 		if @post.update(params[:post].permit(:title, :body, :category_id, :topic_id))
 			redirect_to @post
@@ -63,7 +78,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@post.destroy
 
-		redirect_to root_path
+		redirect_to current_user
 	end
 
 
