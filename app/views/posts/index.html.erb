@@ -16,7 +16,7 @@
         <% if user_signed_in? %>
         <h1><%= link_to "Dodaj wiersz", new_post_path,  {:style=>"color:#fff;"} %></h1>
         <% else %>
-          <h3> Dołącz do nas</h3>
+          <h3> Dołącz do nas </h3>
           <h1><%= link_to 'Zaloguj', new_user_session_path, {:style=>"color:#fff;"} %></h1>
         <% end %>
 
@@ -90,8 +90,8 @@
        
                  
          <h2 class="titlepost"><%= link_to post.title, post, {:style=>"color:#FF6622;"} %></h2>
-         <p class="datepost"><%= post.created_at.strftime("%B, %d, %Y") %></p>
-         <p class="bodypost"><% post.body.split[0...15].each do |m| %><%= m + " " %><% end %>
+   
+         <p class="bodypost"><% post.body.to_html.split[0..20].each do |m| %><%= m.html_safe + " " %><% end %>(...)
          </p>
           <p class="button2"><%= link_to "Czytaj dalej", post %></p>
         </div>      

@@ -1,63 +1,72 @@
 	
-<div class="post_wrapper ">
+<div class ="panel-body  ">
+
+<div class='dane'>
+		<p class_"date">
+			<b>Dodano:</b><%= @post.created_at.strftime(" %d.%m.%Y ") %> 
+			
+		</p>
+
+		<p>
+			<b>Autor: </b><%= link_to @post.user.login %>
+		</p>
+
+		<p>
+			<b>Kategoria: </b><%= @post.category.title %>
+		</p>
+
+		<p>
+			<b>Temat:</b> <%= @post.topic.name  unless @post.topic.nil? %>
+		</p>
+
+		<% if user_signed_in? %>
+				<% if can? :update, @post %>
+				<%= link_to 'Edycja', edit_post_path(@post) %>
+				<% end %>
+				<% if can? :destroy, @post %>
+				| <%= link_to 'Usuń', post_path(@post), method: :delete, data: { confirm: 'jesteś pewien?'} %>
+				<% end %>
+			<% end %>
+		 <p>
+		  	<%= link_to "Powrót", posts_path %>
+		 </p>
+		 <br>
+	<div>
+
+
 
 
 
 
 	<% if @post.category.title == "erotyk" %>
-			<div class="erotyk">
+			<div class="erotyk_show">
 	<% elsif @post.category.title == "aforyzm" %> 
-	     	<div class="aforyzm">
+	     	<div class="aforyzm_show">
 	<% elsif @post.category.title == "haiku" %> 
-	     	<div class="haiku">
+	     	<div class="haiku_show">
 	<% elsif @post.category.title == "wiersz" %> 
-	     	<div class="wiersz">
+	     	<div class="wiersz_show">
 	<% else %>
-	  	 	<div class="limeryk">
+	  	 	<div class="limeryk_show">
 	<% end %>
 
 
 
 
- 	<div class="post-one">
+ 	<div class="post-show">
  		
-		<h1 class="title">
+		<h1 class="title-post">
 			<%= @post.title %>
 		</h1>
-		
-		<p class="body"><%=  @post.body.html_safe %></p>
+	
+		<p class="body-post"><%= @post.body.to_html.html_safe %></p>
 		<!-- <p class="comment"><%= @post.body %></p> -->
+
+
 	</div>
+	
 
-
-	<p class_"date">
-		Dodano <%= @post.created_at.strftime(" %d.%m.%Y ") %> 
-		
-	</p>
-
-	<p>
-		Autor: <%= @post.user_id %>
-	</p>
-
-	<p>
-		Kategoria: <%= @post.category.title %>
-	</p>
-
-	<p>
-		Temat: <%= @post.topic.name  unless @post.topic.nil? %>
-	</p>
-
-	<% if user_signed_in? %>
-			<% if can? :update, @post %>
-			<%= link_to 'Edycja', edit_post_path(@post) %>
-			<% end %>
-			<% if can? :destroy, @post %>
-			| <%= link_to 'Usuń', post_path(@post), method: :delete, data: { confirm: 'jesteś pewien?'} %>
-			<% end %>
-		<% end %>
- <p>
-  <%= link_to "Powrót", posts_path %>
- </p>
+	</div>
 
 	</div>
 	</div>
@@ -75,6 +84,7 @@
 		<%= render "comments/form" %>
 	<% end %>
     </div>
+    <br>
 
 </div>
 

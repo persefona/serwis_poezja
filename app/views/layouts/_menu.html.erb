@@ -1,6 +1,7 @@
 <nav>
 
-      <ul class="nav navbar-nav navbar-left">
+      <ul class="nav navbar-nav navbar-left" >
+
 
       <%= link_to "Salon poezji", root_path, class: 'navbar-brand' %>
       </ul>
@@ -10,7 +11,8 @@
      
 				
 				
-				<li><%=link_to "O nas", about_path, class: 'brand' %></li>
+				<li ><%=link_to "O nas", about_path, class: 'brand' %></li>
+				<li><%=link_to "Inspiracje", inspiration_path, class: 'brand' %></li>
 				
 				<% if user_signed_in? %>
 

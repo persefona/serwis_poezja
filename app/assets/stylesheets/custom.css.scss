@@ -4,11 +4,11 @@
 .alert-notice { @extend .alert-info; }
 .alert-alert { @extend .alert-danger; }
 
-body {
+html, body {
 	margin: 0px;	
+  height: 100%;
+  width: 100%;
 }
-
-
 
 .round-image-50 {
     background-color: white;
@@ -70,6 +70,7 @@ body {
 
  .carousel {
     margin: 0px;
+    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.7);
  }
 
 
@@ -79,7 +80,8 @@ body {
 }
 
 #content {
-    margin-top: 100px;
+    box-sizing: border-box;
+    padding-top: 100px;
     margin-left: 150px;
 }
 
@@ -92,8 +94,15 @@ body {
 
 /*Stopka*/
 .panel-footer {
-    background-color: black;
-      width:100%;
+    background-color: rgb(0, 0, 0);;
+    border-color: #090909;
+    width:100%;
+    color: rgb(255, 255, 255);
+    
+  
+
+    font-size: 13px;
+    text-transform: none;
   }
  
 
@@ -111,16 +120,28 @@ body {
 }
 
 .post_wrapper {
-    margin: 100px;
+      min-height: 100%;
 }
 
-.post-one {
-     text-align: center;
-     margin-top: 1%;
+.body-post{
+    margin-left: 40%;
+
+}
+
+.title-post {
+  margin-left: 41%;
+  font-size: 28px;
+ 
+
+}
+
+.post-show {
+  padding-top: 4%;
 }
 
 .comments {
-    margin: 100px;
+    margin: 5%;
+    margin-bottom: 0px;
 }
 
 
@@ -135,17 +156,74 @@ body {
 /* Kolory pasów*/
 .erotyk {
     width:100%;
-    height: 250px;
+    height: 100%;
+    min-height: 250px;
     margin:0px;
     background-image:linear-gradient(white, #ff7445);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
 
 }
 
 .aforyzm {
     width:100%;
-    height: 250px;
+    height: 100%;
+    min-height: 250px;
     margin:0px;
      background-image:linear-gradient(white, #bbccff);
+   box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+.limeryk {
+     width:100%;
+    height: 250px;
+    margin:0px;
+    background-image:linear-gradient(white, #dab463 );
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+.wiersz {
+     width:100%;
+    height: 250px;
+    margin:0px;
+    background-image:linear-gradient(white, #e5a330);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+
+   
+}
+
+.haiku {
+     width:100%;
+    height: 250px;
+    margin:0px;
+    background-image:linear-gradient(white, #c1e764);
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.3);
+   
+}
+
+/* Widok na pojedynczy wiersz*/
+
+.erotyk_show {
+  
+    margin-top: -215px;
+    margin-left: 180px;
+    margin-right: 5%;
+    min-height: 500px;
+    padding-bottom: 50px;
+    background-image:linear-gradient(white, #ff7445);
+    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.7);
+
+}
+
+.aforyzm_show {
+    margin-top: -210px;
+    margin-left: 180px;
+    margin-right: 5%;
+    min-height: 500px;
+    padding-bottom: 50px;
+    background-image:linear-gradient(white, #bbccff);
+    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.7);
 
 }
 
@@ -157,11 +235,15 @@ body {
 
 }
 
-.wiersz {
-     width:100%;
-    height: 250px;
-    margin:0px;
+.wiersz_show {
+    
+    margin-top: -215px;
+    margin-left: 180px;
+    margin-right: 5%;
+    min-height: 500px;
+    padding-bottom: 50px;
     background-image:linear-gradient(white, #e5a330);
+    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.7);
    
 }
 
@@ -200,15 +282,39 @@ body {
 
 .login, .registration {
  background-image: url("/assets/las.jpg");
-    height: 100%;
+    min-height: 100%;
+    margin-top: -41px;
+ 
 }
 
 .about {
   background-image: url("/assets/two-butter.jpg");
-    height: 650px;
+  min-height: 100%;
+  margin-top: -41px;
+ 
 }
 
+.panel-body {
+  padding: 0%;
+}
 
+.dane{
+  margin-left: 5%;
+  margin-top: 6%;
+
+}
 .poem {
   background-image: url("/assets/two-butter.jpg");
   }
+
+/*zdjęcia w tabeli poetow*/
+.portrait {
+
+    box-shadow: 0px 3px 11px rgba(0, 0, 0, 0.7);
+
+}
+
+.heading {
+  margin-top:120px;
+  margin-left: 5%;
+}

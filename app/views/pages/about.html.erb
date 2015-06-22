@@ -1,31 +1,30 @@
 <div class ="panel-body about">
 	
 	<div id="content">
-		<h2>Witaj w <i>Salonie Poezji! </i></h2>
+		<h2 id="welcome">Witaj w <i>Salonie Poezji! </i></h2>
 		<br>
 
 		<style>
-		h2 {color: #0f0e0a;}
+		#welcome {color: #0f0e0a;}
 		</style>
 
 	
-		<p>Celem serwisu jest przełamywanie barier pomiędzy środowiskiem osób<br>
+		<p id="main-text">Celem serwisu jest przełamywanie barier pomiędzy środowiskiem osób<br>
 		po kryzysach psychicznych, a społecznością ludzi zdrowych. </p>
 
-		<p>Mam nadzieję, że wykreowany tutaj świat poezji, stanie się miejscem <br>wzajemnego poznawania, zdrowienia, ale i chwili relaksu. </p>
+		<p id="main-text">Mam nadzieję, że wykreowany tutaj świat poezji, stanie się miejscem <br>wzajemnego poznawania, zdrowienia, ale i chwili relaksu. </p>
 
 		<style>
-		p {
+		#main-text {
     		font-size: 20px;
     		color:#0f0e0a ;
 		}
 		</style>
 
+		
 
-	<style>
-	  	h3 {color:#361d16;}
-	 </style>
-		<p> Dołącz do nas! <br> <%= link_to 'Zaloguj się', new_user_session_path, {:style=>"color:#fff;"} %> </p>
+	
+		<p id="main-text"> Dołącz do nas! <br> <%= link_to 'Zaloguj się', new_user_session_path, {:style=>"color:#fff;"} %> </p>
 	
 	</div>
 

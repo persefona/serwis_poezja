@@ -6,6 +6,9 @@
    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link  href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
 </head>
 <body >
 
@@ -42,8 +45,43 @@
     <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
 
 
-    <footer>
-   <div class="panel-footer">By Anna Banaś</div>
+    <footer class="panel-footer">
+      
+   <div class="row">
+      <div class="col-xs-6 col-md-4">
+          <h3><%=link_to "O stronie", about_path, class: 'brand' %></h3>
+                <p>Serwis powstał jako projekt dyplomowy w&nbsp;ramach studiów<br>
+                    I stopnia na kierunku Elektroniczne Przetwarzanie Informacji
+                    na Uniwersytecie Jagiellońskim w Krakowie.
+                </p>
+   
+                 <p class="social_bookmarks">
+                      <a href="http://www.otworzciedrzwi.org/"></i>Stowarzyszenie "Otwórzcie Dzwi"</a><br>
+                      <%=link_to "Żródła", sources_path %>
+
+                </p>
+
+                <p class="copyright">
+                        Copyright © 2015 Anna Banaś. All Rights Reserved.
+                </p>
+      </div>
+
+      <div class="col-xs-6 col-md-4"></div>
+
+      <div class="col-xs-6 col-md-4">
+
+          <h3><%=link_to "Kontakt" %></h3>
+
+          <ul id="contact-info">
+
+             <i class="general foundicon-mail icon"></i>
+             <span class="glyphicon glyphicon-envelope"> Email:</span><br>
+               annabanas.banas@wzks.uj.edu.pl
+          </ul>
+       
+      </div>
+  </div>
+
 </footer>
 
 </body>
