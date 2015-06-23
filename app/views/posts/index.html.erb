@@ -14,7 +14,7 @@
       <img src="/assets/droga.jpg" alt="...">
       <div class="carousel-caption">
         <% if user_signed_in? %>
-        <h1><%= link_to "Dodaj wiersz", new_post_path,  {:style=>"color:#fff;"} %></h1>
+        <h1><%= link_to "Dodaj utwór", new_post_path,  {:style=>"color:#fff;"} %></h1>
         <% else %>
           <h3> Dołącz do nas </h3>
           <h1><%= link_to 'Zaloguj', new_user_session_path, {:style=>"color:#fff;"} %></h1>
@@ -73,12 +73,11 @@
 
      <% if post.category.title == "erotyk" %>
       <div class="erotyk">
-  <% elsif post.category.title == "aforyzm" %> 
+  <% elsif post.category.title == "dowolny" %> 
         <div class="aforyzm">
   <% elsif post.category.title == "haiku" %> 
         <div class="haiku">
-  <% elsif post.category.title == "wiersz" %> 
-        <div class="wiersz">
+
   <% else %>
         <div class="limeryk">
   <% end %>

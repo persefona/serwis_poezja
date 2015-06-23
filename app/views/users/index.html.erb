@@ -34,7 +34,7 @@
 
 
 
-       <td class="text-center"><%= link_to 'Wiersze:  ', user %><%= user.posts.count unless user.posts.count.nil? %></td>
+       <td class="text-center"><%= link_to 'Utworów:  ', user %><%= user.posts.count unless user.posts.count.nil? %></td>
           <% if current_user.admin? %> 
               <td><%= link_to 'Edytuj', edit_user_path(user) %></td>
               <td><%= link_to 'Usuń', user_path(user), method: :delete, data: { confirm: 'jesteś pewien?'} %>
@@ -45,16 +45,8 @@
     <% end %>
   </tbody>
 </table>
-
-
-<ul class="pagination">
-  <li class="disabled"><a href="#">&laquo;</a></li>
-  <li><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li class="active"><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#">&raquo;</a></li>
-</ul>
-
+      <p>
+        <%=link_to "Początek listy", users_path %> |
+        <%= link_to "Strona główna", posts_path %>
+     </p>
 </div>

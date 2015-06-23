@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :topic
 	belongs_to :user
-	validates :title, presence: true, length: { minimum: 5 }
+	validates :title, presence: true, length: { minimum: 3 }
 	validates :body, presence: true
 
 	

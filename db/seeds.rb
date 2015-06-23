@@ -9,6 +9,5 @@
 r1 = Role.create({name: "Admin"})
 r2 = Role.create({name: "Regular"})
 
-users = User.create([{login: 'rutka'}, {emaiil: 'admin@vp.pl'}, {password:'password'}, {password_conformation: 'password'}, {role_id:r1.id}])
-
+users = User.create({login: 'rutka', email: 'admin@vp.pl', password:'password', password_confirmation: 'password', role_id:r1.id})
 

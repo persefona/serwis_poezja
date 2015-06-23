@@ -8,7 +8,7 @@
 		</p>
 
 		<p>
-			<b>Autor: </b><%= link_to @post.user.login %>
+			<b>Autor: </b><%= link_to @post.user.login, @post.user %>
 		</p>
 
 		<p>
@@ -40,12 +40,11 @@
 
 	<% if @post.category.title == "erotyk" %>
 			<div class="erotyk_show">
-	<% elsif @post.category.title == "aforyzm" %> 
+	<% elsif @post.category.title == "dowolny" %> 
 	     	<div class="aforyzm_show">
 	<% elsif @post.category.title == "haiku" %> 
 	     	<div class="haiku_show">
-	<% elsif @post.category.title == "wiersz" %> 
-	     	<div class="wiersz_show">
+	
 	<% else %>
 	  	 	<div class="limeryk_show">
 	<% end %>
